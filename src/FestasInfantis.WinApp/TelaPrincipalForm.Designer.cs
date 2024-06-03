@@ -31,7 +31,7 @@
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             contatosMenuItem = new ToolStripMenuItem();
-            compromissosMenuItem = new ToolStripMenuItem();
+            TemaMenuItem = new ToolStripMenuItem();
             tarefasToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             statusLabelPrincipal = new ToolStripStatusLabel();
@@ -40,16 +40,16 @@
             btnEditar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            btnVisualizarAlugueis = new ToolStripButton();
-            lblTipoCadastro = new ToolStripLabel();
-            pnlRegistros = new Panel();
-            toolStripSeparator2 = new ToolStripSeparator();
             btnFiltrar = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
             btnAdicionarItens = new ToolStripButton();
-            btnConfigurarDescontos = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
+            btnVisualizarAlugueis = new ToolStripButton();
             btnConcluirAluguel = new ToolStripButton();
+            btnConfigurarDescontos = new ToolStripButton();
             toolStripSeparator4 = new ToolStripSeparator();
+            lblTipoCadastro = new ToolStripLabel();
+            pnlRegistros = new Panel();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contatosMenuItem, compromissosMenuItem, tarefasToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contatosMenuItem, TemaMenuItem, tarefasToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(86, 24);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -75,19 +75,20 @@
             // contatosMenuItem
             // 
             contatosMenuItem.Name = "contatosMenuItem";
-            contatosMenuItem.Size = new Size(176, 24);
+            contatosMenuItem.Size = new Size(180, 24);
             contatosMenuItem.Text = "Contatos";
             // 
-            // compromissosMenuItem
+            // TemaMenuItem
             // 
-            compromissosMenuItem.Name = "compromissosMenuItem";
-            compromissosMenuItem.Size = new Size(176, 24);
-            compromissosMenuItem.Text = "Compromissos";
+            TemaMenuItem.Name = "TemaMenuItem";
+            TemaMenuItem.Size = new Size(180, 24);
+            TemaMenuItem.Text = "Temas";
+            TemaMenuItem.Click += TemaMenuItem_Click;
             // 
             // tarefasToolStripMenuItem
             // 
             tarefasToolStripMenuItem.Name = "tarefasToolStripMenuItem";
-            tarefasToolStripMenuItem.Size = new Size(176, 24);
+            tarefasToolStripMenuItem.Size = new Size(180, 24);
             tarefasToolStripMenuItem.Text = "Tarefas";
             // 
             // statusStrip1
@@ -125,6 +126,7 @@
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Padding = new Padding(5);
             btnAdicionar.Size = new Size(38, 38);
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // btnEditar
             // 
@@ -153,37 +155,6 @@
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 41);
             // 
-            // btnVisualizarAlugueis
-            // 
-            btnVisualizarAlugueis.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnVisualizarAlugueis.Enabled = false;
-            btnVisualizarAlugueis.Image = Properties.Resources.btnVisualizarAlugueis;
-            btnVisualizarAlugueis.ImageScaling = ToolStripItemImageScaling.None;
-            btnVisualizarAlugueis.ImageTransparentColor = Color.Magenta;
-            btnVisualizarAlugueis.Name = "btnVisualizarAlugueis";
-            btnVisualizarAlugueis.Padding = new Padding(5);
-            btnVisualizarAlugueis.Size = new Size(38, 38);
-            // 
-            // lblTipoCadastro
-            // 
-            lblTipoCadastro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTipoCadastro.Name = "lblTipoCadastro";
-            lblTipoCadastro.Size = new Size(123, 38);
-            lblTipoCadastro.Text = "Tipo de Cadastro";
-            // 
-            // pnlRegistros
-            // 
-            pnlRegistros.Dock = DockStyle.Fill;
-            pnlRegistros.Location = new Point(0, 69);
-            pnlRegistros.Name = "pnlRegistros";
-            pnlRegistros.Size = new Size(800, 356);
-            pnlRegistros.TabIndex = 3;
-            // 
-            // toolStripSeparator2
-            // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 41);
-            // 
             // btnFiltrar
             // 
             btnFiltrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -211,16 +182,21 @@
             btnAdicionarItens.Padding = new Padding(5);
             btnAdicionarItens.Size = new Size(38, 38);
             // 
-            // btnConfigurarDescontos
+            // toolStripSeparator2
             // 
-            btnConfigurarDescontos.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnConfigurarDescontos.Enabled = false;
-            btnConfigurarDescontos.Image = Properties.Resources.btnConfigurarDescontos;
-            btnConfigurarDescontos.ImageScaling = ToolStripItemImageScaling.None;
-            btnConfigurarDescontos.ImageTransparentColor = Color.Magenta;
-            btnConfigurarDescontos.Name = "btnConfigurarDescontos";
-            btnConfigurarDescontos.Padding = new Padding(5);
-            btnConfigurarDescontos.Size = new Size(38, 38);
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 41);
+            // 
+            // btnVisualizarAlugueis
+            // 
+            btnVisualizarAlugueis.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnVisualizarAlugueis.Enabled = false;
+            btnVisualizarAlugueis.Image = Properties.Resources.btnVisualizarAlugueis;
+            btnVisualizarAlugueis.ImageScaling = ToolStripItemImageScaling.None;
+            btnVisualizarAlugueis.ImageTransparentColor = Color.Magenta;
+            btnVisualizarAlugueis.Name = "btnVisualizarAlugueis";
+            btnVisualizarAlugueis.Padding = new Padding(5);
+            btnVisualizarAlugueis.Size = new Size(38, 38);
             // 
             // btnConcluirAluguel
             // 
@@ -233,10 +209,36 @@
             btnConcluirAluguel.Padding = new Padding(5);
             btnConcluirAluguel.Size = new Size(38, 38);
             // 
+            // btnConfigurarDescontos
+            // 
+            btnConfigurarDescontos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnConfigurarDescontos.Enabled = false;
+            btnConfigurarDescontos.Image = Properties.Resources.btnConfigurarDescontos;
+            btnConfigurarDescontos.ImageScaling = ToolStripItemImageScaling.None;
+            btnConfigurarDescontos.ImageTransparentColor = Color.Magenta;
+            btnConfigurarDescontos.Name = "btnConfigurarDescontos";
+            btnConfigurarDescontos.Padding = new Padding(5);
+            btnConfigurarDescontos.Size = new Size(38, 38);
+            // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
             toolStripSeparator4.Size = new Size(6, 41);
+            // 
+            // lblTipoCadastro
+            // 
+            lblTipoCadastro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTipoCadastro.Name = "lblTipoCadastro";
+            lblTipoCadastro.Size = new Size(123, 38);
+            lblTipoCadastro.Text = "Tipo de Cadastro";
+            // 
+            // pnlRegistros
+            // 
+            pnlRegistros.Dock = DockStyle.Fill;
+            pnlRegistros.Location = new Point(0, 69);
+            pnlRegistros.Name = "pnlRegistros";
+            pnlRegistros.Size = new Size(800, 356);
+            pnlRegistros.TabIndex = 3;
             // 
             // TelaPrincipalForm
             // 
@@ -268,7 +270,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cadastrosToolStripMenuItem;
         private ToolStripMenuItem contatosMenuItem;
-        private ToolStripMenuItem compromissosMenuItem;
+        private ToolStripMenuItem TemaMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel statusLabelPrincipal;
         private ToolStrip toolStrip1;
