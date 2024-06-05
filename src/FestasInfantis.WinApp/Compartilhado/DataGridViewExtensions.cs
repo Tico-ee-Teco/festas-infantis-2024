@@ -62,7 +62,7 @@
             if (valorSelecionado == null)
                 return -1;
 
-            return (int)valorSelecionado;
+            return Convert.ToInt32(valorSelecionado);
         }
     }
 }

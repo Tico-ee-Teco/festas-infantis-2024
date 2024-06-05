@@ -7,7 +7,7 @@ namespace FestasInfantis.WinApp
     {
         ControladorBase controlador;
 
-        RepositorioTema repositorioTema;
+        IRepositorioTema repositorioTema;
 
         public static TelaPrincipalForm Instancia { get; private set; }
 
@@ -18,7 +18,9 @@ namespace FestasInfantis.WinApp
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
 
-            repositorioTema = new RepositorioTema();
+            repositorioTema = new RepositorioTemaEmArquivo();
+
+
         }
 
         public void AtualizarRodape(string texto)
@@ -35,6 +37,14 @@ namespace FestasInfantis.WinApp
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             controlador.Adicionar();
+        }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            controlador.Editar();
+        }
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            controlador.Excluir();
         }
 
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
@@ -74,7 +84,6 @@ namespace FestasInfantis.WinApp
             pnlRegistros.Controls.Clear();
             pnlRegistros.Controls.Add(listagemContato);
         }
-
 
     }
 }

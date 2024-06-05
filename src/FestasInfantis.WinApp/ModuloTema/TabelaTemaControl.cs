@@ -24,12 +24,16 @@ namespace FestasInfantis.WinApp.ModuloTema
                 grid.Rows.Add(
                     t.Id.ToString(),
                     t.Nome);               
-            }
-
-           
+            }           
         }
 
-       private DataGridViewColumn[] ObterColunas()
+        public int ObterRegistroSelecionado()
+        {
+            return grid.SelecionarId();
+
+        }       
+
+        private DataGridViewColumn[] ObterColunas()
        {
             return new DataGridViewColumn[]
             {
@@ -37,13 +41,7 @@ namespace FestasInfantis.WinApp.ModuloTema
                 new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome" },
         
             };
-        } 
-
-        //ToDo
-        //Adicionar zebrado
-
-
-        
+        }     
 
     }
 }

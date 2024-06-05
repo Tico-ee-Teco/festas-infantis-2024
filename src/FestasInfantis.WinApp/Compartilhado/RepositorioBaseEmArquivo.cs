@@ -17,6 +17,9 @@ namespace FestasInfantis.WinApp.Compartilhado
             caminho = $"C:\\temp\\fetasInfantis\\{nomeArquivo}";
 
             registros = DeserializarRegistros();
+
+            if (registros.Count > 0)
+                contadorId = registros.Max(r => r.Id) + 1;
         }
 
         public void Cadastrar(T novoRegistro)

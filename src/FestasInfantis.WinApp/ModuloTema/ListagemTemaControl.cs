@@ -5,6 +5,7 @@
         public ListagemTemaControl()
         {
             InitializeComponent();
+
         }
 
         public void AtualizarRegistros(List<Tema> temas)

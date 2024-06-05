@@ -1,4 +1,6 @@
-﻿namespace FestasInfantis.WinApp.ModuloTema
+﻿using FestasInfantis.WinApp.ModuloTema;
+
+namespace FestasInfantis.WinApp.ModuloItem
 {
     public class Item
     {
@@ -7,16 +9,16 @@
         public decimal Quantidade { get; set; }
         public Tema Tema { get; set; }
 
-        public Item(string descricao, decimal valor, decimal quantidade ,Tema tema)
+        public Item(string descricao, decimal valor, decimal quantidade, Tema tema)
         {
             Descricao = descricao;
             Valor = valor;
-            Quantidade = quantidade;  
-            
+            Quantidade = quantidade;
+
             Tema = tema;
         }
 
-        public decimal ValorItem ()
+        public decimal ValorItem()
         {
             decimal valorTotal = Quantidade * Valor;
 

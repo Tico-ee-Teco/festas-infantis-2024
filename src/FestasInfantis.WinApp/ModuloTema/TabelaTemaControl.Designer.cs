@@ -38,6 +38,7 @@
             grid.Dock = DockStyle.Fill;
             grid.Location = new Point(0, 0);
             grid.Name = "grid";
+            grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grid.Size = new Size(641, 401);
             grid.TabIndex = 0;
             // 
