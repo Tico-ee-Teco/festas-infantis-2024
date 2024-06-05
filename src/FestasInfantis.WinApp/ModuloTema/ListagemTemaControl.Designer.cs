@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listTema = new CheckedListBox();
+            listTemas = new CheckedListBox();
             SuspendLayout();
             // 
-            // listTema
+            // listTemas
             // 
-            listTema.Dock = DockStyle.Fill;
-            listTema.FormattingEnabled = true;
-            listTema.Location = new Point(0, 0);
-            listTema.Name = "listTema";
-            listTema.Size = new Size(554, 355);
-            listTema.TabIndex = 0;
+            listTemas.Dock = DockStyle.Fill;
+            listTemas.FormattingEnabled = true;
+            listTemas.Location = new Point(0, 0);
+            listTemas.Name = "listTemas";
+            listTemas.Size = new Size(554, 355);
+            listTemas.TabIndex = 0;
             // 
             // ListagemTemaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(listTema);
+            Controls.Add(listTemas);
             Name = "ListagemTemaControl";
             Size = new Size(554, 355);
             ResumeLayout(false);
@@ -52,6 +52,6 @@
 
         #endregion
 
-        private CheckedListBox listTema;
+        private CheckedListBox listTemas;
     }
 }

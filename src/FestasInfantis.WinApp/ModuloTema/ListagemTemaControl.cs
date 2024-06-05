@@ -7,14 +7,22 @@
             InitializeComponent();
         }
 
-        //public void AtualizarRegistros(List<Tema> temas)
-        //{
-        //    listTemas.Items.Clear();
+        public void AtualizarRegistros(List<Tema> temas)
+        {
+            listTemas.Items.Clear();
 
-        //    foreach (Tema tema in temas)
-        //        listTemas.Items.Add(tema);
-        //}
+            foreach (Tema tema in temas)
+                listTemas.Items.Add(tema);
+        }
 
-       
+        public Tema ObterRegsitroSelecionado()
+        {
+            if (listTemas.SelectedItem == null)
+                return null;
+
+            return (Tema)listTemas.SelectedItem;
+        }
+
+
     }
 }
