@@ -1,6 +1,4 @@
-﻿
-
-namespace FestasInfantis.WinApp.ModuloTema
+﻿namespace FestasInfantis.WinApp.ModuloTema
 {
     public class Item
     {

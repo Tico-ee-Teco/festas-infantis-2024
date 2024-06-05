@@ -32,6 +32,10 @@ namespace FestasInfantis.WinApp
 
             ConfigurarTelaPrincipal(controlador);
         }
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            controlador.Adicionar();
+        }
 
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
         {
@@ -71,12 +75,6 @@ namespace FestasInfantis.WinApp
             pnlRegistros.Controls.Add(listagemContato);
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            TelaTemaForm telaTema = new TelaTemaForm();
-
-            telaTema.ShowDialog();
-        }
 
     }
 }

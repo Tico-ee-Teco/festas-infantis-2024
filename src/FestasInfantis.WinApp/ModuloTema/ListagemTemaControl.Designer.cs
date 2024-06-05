@@ -1,6 +1,6 @@
 ﻿namespace FestasInfantis.WinApp.ModuloTema
 {
-    partial class TabelaTemaControl
+    partial class ListagemTemaControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,32 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grid = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)grid).BeginInit();
+            listTema = new CheckedListBox();
             SuspendLayout();
             // 
-            // grid
+            // listTema
             // 
-            grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid.Dock = DockStyle.Fill;
-            grid.Location = new Point(0, 0);
-            grid.Name = "grid";
-            grid.Size = new Size(641, 401);
-            grid.TabIndex = 0;
+            listTema.Dock = DockStyle.Fill;
+            listTema.FormattingEnabled = true;
+            listTema.Location = new Point(0, 0);
+            listTema.Name = "listTema";
+            listTema.Size = new Size(554, 355);
+            listTema.TabIndex = 0;
             // 
-            // TabelaTemaControl
+            // ListagemTemaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(grid);
-            Name = "TabelaTemaControl";
-            Size = new Size(641, 401);
-            ((System.ComponentModel.ISupportInitialize)grid).EndInit();
+            Controls.Add(listTema);
+            Name = "ListagemTemaControl";
+            Size = new Size(554, 355);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView grid;
+        private CheckedListBox listTema;
     }
 }

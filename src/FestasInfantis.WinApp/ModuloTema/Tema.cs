@@ -1,6 +1,4 @@
-﻿
-
-using eAgenda.ConsoleApp.Compartilhado;
+﻿using eAgenda.ConsoleApp.Compartilhado;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
@@ -9,22 +7,28 @@ namespace FestasInfantis.WinApp.ModuloTema
         public string Nome { get; set; }
         public decimal Valor { get; set; }
         public bool Aluguel { get; set; }
-        List<Item> itens;
-        public Tema(string nome, decimal valor, bool aluguel)
+
+        public List<Item> itens;
+        public Tema(string nome)
         {
-            Nome = nome;
-            Valor = valor;
-            Aluguel = aluguel;
+            Nome = nome;            
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
-            throw new NotImplementedException();
+            Tema novoTema = (Tema)novoRegistro;
+
+            Nome = novoTema.Nome;
         }
 
         public override List<string> Validar()
         {
-            throw new NotImplementedException();
+            List<string> erros = new List<string>();
+
+            if (string.IsNullOrEmpty(Nome.Trim()))
+                erros.Add("O campo \"nome\" é obrigatório");
+
+            return erros;
         }
     }
 }

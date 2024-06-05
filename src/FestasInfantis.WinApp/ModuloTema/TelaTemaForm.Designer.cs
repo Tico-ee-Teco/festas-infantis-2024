@@ -85,6 +85,7 @@
             // 
             // txtId
             // 
+            txtId.Enabled = false;
             txtId.Location = new Point(79, 22);
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 27);
@@ -103,10 +104,10 @@
             // tbSelecionarItens
             // 
             tbSelecionarItens.Controls.Add(chklistItens);
-            tbSelecionarItens.Location = new Point(4, 24);
+            tbSelecionarItens.Location = new Point(4, 29);
             tbSelecionarItens.Name = "tbSelecionarItens";
             tbSelecionarItens.Padding = new Padding(3);
-            tbSelecionarItens.Size = new Size(461, 290);
+            tbSelecionarItens.Size = new Size(461, 285);
             tbSelecionarItens.TabIndex = 1;
             tbSelecionarItens.Text = "Seleção de Itens";
             tbSelecionarItens.UseVisualStyleBackColor = true;
@@ -117,20 +118,23 @@
             chklistItens.FormattingEnabled = true;
             chklistItens.Location = new Point(3, 3);
             chklistItens.Name = "chklistItens";
-            chklistItens.Size = new Size(455, 284);
+            chklistItens.Size = new Size(455, 279);
             chklistItens.TabIndex = 0;
             // 
             // btnGravar
             // 
+            btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(283, 345);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(94, 54);
             btnGravar.TabIndex = 1;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
+            btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(383, 345);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(94, 54);

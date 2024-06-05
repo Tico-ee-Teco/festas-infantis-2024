@@ -1,4 +1,6 @@
 ﻿
+using eAgenda.WinApp.Compartilhado;
+
 namespace FestasInfantis.WinApp.ModuloTema
 {
     public partial class TabelaTemaControl : UserControl
@@ -6,38 +8,42 @@ namespace FestasInfantis.WinApp.ModuloTema
         public TabelaTemaControl()
         {
             InitializeComponent();
+
+            grid.Columns.AddRange(ObterColunas());
+
+            grid.ConfigurarGridSomenteLeitura();
+            grid.ConfigurarGridZebrado();
         }
 
         public void AtualizarRegistros(List<Tema> temas)
         {
-            listTema.Items.Clear();
+            grid.Rows.Clear();
 
             foreach (Tema t in temas)
-            {
-                ListViewItem item = new ListViewItem(t.Id.ToString())
-                {
-                    Tag = t,
-                };
-
-                item.SubItems.Add(t.Nome);
-
-                listTema.Items.Add(item);
+            { 
+                grid.Rows.Add(
+                    t.Id.ToString(),
+                    t.Nome);               
             }
 
-            //ConfigurarColunas();
+           
         }
 
-        //private static void ConfigurarColunas()
-        //{
-        //    ColumnHeader[] colunas = new ColumnHeader[]
-        //    {
-        //        new ColumnHeader() {Text = "Id" },
-        //        new ColumnHeader() {Text = "Nome"},
-        //        new ColumnHeader() {Text = "Valor"},
-        //    };
+       private DataGridViewColumn[] ObterColunas()
+       {
+            return new DataGridViewColumn[]
+            {
+                new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome" },
+        
+            };
+        } 
 
-        //    listTema.Columns.AddRange(colunas);
-        //}
+        //ToDo
+        //Adicionar zebrado
+
+
+        
 
     }
 }
