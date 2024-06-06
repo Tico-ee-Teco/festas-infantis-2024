@@ -6,7 +6,7 @@ namespace FestasInfantis.WinApp.ModuloItem
     {
         private Item item;
 
-        private Item Item
+        public Item Item
         {
             get
             {

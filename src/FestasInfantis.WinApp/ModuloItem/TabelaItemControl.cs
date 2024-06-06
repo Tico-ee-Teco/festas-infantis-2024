@@ -1,5 +1,4 @@
 ﻿using eAgenda.WinApp.Compartilhado;
-using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloItem
 {
