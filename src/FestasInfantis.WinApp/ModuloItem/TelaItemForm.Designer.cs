@@ -30,12 +30,13 @@
         {
             txtId = new TextBox();
             label1 = new Label();
-            txtNomeTema = new TextBox();
+            txtDescricaoItem = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            txtValor = new DateTimePicker();
             btnCancelar = new Button();
             btnGravar = new Button();
+            txtValor = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)txtValor).BeginInit();
             SuspendLayout();
             // 
             // txtId
@@ -57,13 +58,13 @@
             label1.TabIndex = 2;
             label1.Text = "Id:";
             // 
-            // txtNomeTema
+            // txtDescricaoItem
             // 
-            txtNomeTema.Location = new Point(103, 82);
-            txtNomeTema.Margin = new Padding(3, 4, 3, 4);
-            txtNomeTema.Name = "txtNomeTema";
-            txtNomeTema.Size = new Size(322, 27);
-            txtNomeTema.TabIndex = 5;
+            txtDescricaoItem.Location = new Point(103, 82);
+            txtDescricaoItem.Margin = new Padding(3, 4, 3, 4);
+            txtDescricaoItem.Name = "txtDescricaoItem";
+            txtDescricaoItem.Size = new Size(322, 27);
+            txtDescricaoItem.TabIndex = 5;
             // 
             // label2
             // 
@@ -82,17 +83,6 @@
             label3.Size = new Size(46, 20);
             label3.TabIndex = 6;
             label3.Text = "Valor:";
-            // 
-            // txtValor
-            // 
-            txtValor.CustomFormat = "0";
-            txtValor.Format = DateTimePickerFormat.Custom;
-            txtValor.Location = new Point(103, 116);
-            txtValor.Name = "txtValor";
-            txtValor.RightToLeft = RightToLeft.No;
-            txtValor.ShowUpDown = true;
-            txtValor.Size = new Size(80, 27);
-            txtValor.TabIndex = 7;
             // 
             // btnCancelar
             // 
@@ -113,17 +103,25 @@
             btnGravar.TabIndex = 8;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
+            // 
+            // txtValor
+            // 
+            txtValor.Location = new Point(103, 119);
+            txtValor.Name = "txtValor";
+            txtValor.Size = new Size(87, 27);
+            txtValor.TabIndex = 10;
             // 
             // TelaItemForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(527, 227);
+            Controls.Add(txtValor);
             Controls.Add(btnCancelar);
             Controls.Add(btnGravar);
-            Controls.Add(txtValor);
             Controls.Add(label3);
-            Controls.Add(txtNomeTema);
+            Controls.Add(txtDescricaoItem);
             Controls.Add(label2);
             Controls.Add(txtId);
             Controls.Add(label1);
@@ -135,7 +133,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro de Itens";
-            Load += TelaItemForm_Load;
+            ((System.ComponentModel.ISupportInitialize)txtValor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -144,11 +142,11 @@
 
         private TextBox txtId;
         private Label label1;
-        private TextBox txtNomeTema;
+        private TextBox txtDescricaoItem;
         private Label label2;
         private Label label3;
-        private DateTimePicker txtValor;
         private Button btnCancelar;
         private Button btnGravar;
+        private NumericUpDown txtValor;
     }
 }

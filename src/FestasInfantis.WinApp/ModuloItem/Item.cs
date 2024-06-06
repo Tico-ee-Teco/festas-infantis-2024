@@ -1,28 +1,36 @@
-﻿using FestasInfantis.WinApp.ModuloTema;
+﻿using eAgenda.ConsoleApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloItem
 {
-    public class Item
+    public class Item : EntidadeBase 
     {
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
         public decimal Quantidade { get; set; }
         public Tema Tema { get; set; }
 
-        public Item(string descricao, decimal valor, decimal quantidade, Tema tema)
+        public Item(string descricao, decimal valor)
         {
             Descricao = descricao;
-            Valor = valor;
-            Quantidade = quantidade;
+            Valor = valor;           
+        }        
 
-            Tema = tema;
+        public override List<string> Validar()
+        {
+            List<string> erros = new List<string>();
+
+            if (string.IsNullOrEmpty(Descricao.Trim()))
+                erros.Add("O campo \"nome\" é obrigatório");
+            if (Valor <= 0)
+                erros.Add("O campo \"valor\" é obrigatório");
+
+            return erros;
         }
 
-        public decimal ValorItem()
+        public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
-            decimal valorTotal = Quantidade * Valor;
-
-            return valorTotal;
+            throw new NotImplementedException();
         }
     }
 }
