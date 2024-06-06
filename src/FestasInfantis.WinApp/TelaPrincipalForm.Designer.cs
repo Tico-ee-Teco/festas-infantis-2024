@@ -32,7 +32,7 @@
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             contatosMenuItem = new ToolStripMenuItem();
             TemaMenuItem = new ToolStripMenuItem();
-            tarefasToolStripMenuItem = new ToolStripMenuItem();
+            ItensMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             statusLabelPrincipal = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
@@ -67,7 +67,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contatosMenuItem, TemaMenuItem, tarefasToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contatosMenuItem, TemaMenuItem, ItensMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(86, 24);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -75,21 +75,22 @@
             // contatosMenuItem
             // 
             contatosMenuItem.Name = "contatosMenuItem";
-            contatosMenuItem.Size = new Size(137, 24);
+            contatosMenuItem.Size = new Size(180, 24);
             contatosMenuItem.Text = "Contatos";
             // 
             // TemaMenuItem
             // 
             TemaMenuItem.Name = "TemaMenuItem";
-            TemaMenuItem.Size = new Size(137, 24);
+            TemaMenuItem.Size = new Size(180, 24);
             TemaMenuItem.Text = "Temas";
             TemaMenuItem.Click += TemaMenuItem_Click;
             // 
-            // tarefasToolStripMenuItem
+            // ItensMenuItem
             // 
-            tarefasToolStripMenuItem.Name = "tarefasToolStripMenuItem";
-            tarefasToolStripMenuItem.Size = new Size(137, 24);
-            tarefasToolStripMenuItem.Text = "Tarefas";
+            ItensMenuItem.Name = "ItensMenuItem";
+            ItensMenuItem.Size = new Size(180, 24);
+            ItensMenuItem.Text = "Itens";
+            ItensMenuItem.Click += ItensMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -283,7 +284,7 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel lblTipoCadastro;
         private ToolStripButton btnVisualizarAlugueis;
-        private ToolStripMenuItem tarefasToolStripMenuItem;
+        private ToolStripMenuItem ItensMenuItem;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton btnFiltrar;
         private ToolStripSeparator toolStripSeparator3;

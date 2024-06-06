@@ -1,4 +1,5 @@
 using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp
@@ -8,6 +9,7 @@ namespace FestasInfantis.WinApp
         ControladorBase controlador;
 
         IRepositorioTema repositorioTema;
+        IRepositorioItem repositorioItem;
 
         public static TelaPrincipalForm Instancia { get; private set; }
 
@@ -19,7 +21,7 @@ namespace FestasInfantis.WinApp
             Instancia = this;
 
             repositorioTema = new RepositorioTemaEmArquivo();
-
+            repositorioItem = new RepositorioItemEmArquivo();
 
         }
 
@@ -29,11 +31,17 @@ namespace FestasInfantis.WinApp
         }
         private void TemaMenuItem_Click(object sender, EventArgs e)
         {
-
             controlador = new ControladorTema(repositorioTema);
 
             ConfigurarTelaPrincipal(controlador);
         }
+        private void ItensMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorItem(repositorioItem);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             controlador.Adicionar();
