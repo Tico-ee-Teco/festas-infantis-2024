@@ -1,6 +1,4 @@
-﻿using FestasInfantis.WinApp.ModuloTema;
-
-namespace FestasInfantis.WinApp.ModuloItem
+﻿namespace FestasInfantis.WinApp.ModuloItem
 {
     public partial class TelaItemForm : Form
     {

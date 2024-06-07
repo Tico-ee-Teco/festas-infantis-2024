@@ -1,4 +1,4 @@
-﻿using eAgenda.WinApp.Compartilhado;
+﻿using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloItem
@@ -30,7 +30,7 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             if (resultado != DialogResult.OK)
                 return;
-            
+
             Item novoItem = telaItem.Item;
 
             //if (temas.Any(t => t.Itens.Any(i => i.Descricao == novoItem.Descricao)))

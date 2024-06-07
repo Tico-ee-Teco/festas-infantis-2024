@@ -1,13 +1,16 @@
-﻿using eAgenda.WinApp.Compartilhado;
+﻿using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    public class ControladorTema : ControladorBase
+    public class ControladorTema : ControladorBase, IControladorAdicionavel
     {
-        private TabelaTemaControl listTema;       
+        private TabelaTemaControl listTema;
+        private TabelaItemControl tabelaItens;
 
-        private IRepositorioTema repositorioTema;     
-        
+        private IRepositorioTema repositorioTema;
+        private IRepositorioItem repositorioItem;
+
         public override string TipoCadastro { get { return "Temas"; } }
 
         public override string ToolTipAdicionar { get { return "Cadastrar um novo tema"; } }
@@ -16,9 +19,12 @@ namespace FestasInfantis.WinApp.ModuloTema
 
         public override string ToolTipExcluir { get { return "Excluir um tema existente"; } }
 
-        public ControladorTema(IRepositorioTema repositorioTema)
+        public string ToolTipAdicionarItem { get { return "Adicionar um item existente"; } }
+
+        public ControladorTema(IRepositorioTema repositorioTema, IRepositorioItem repositorioItem)
         {
             this.repositorioTema = repositorioTema;
+            this.repositorioItem = repositorioItem;
         }
 
         public override void Adicionar()
@@ -62,6 +68,10 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             telaTema.Tema = temaSelecionado;
 
+            List<Item> itensEscolhidos = repositorioItem.SelecionarTodos();// ToDo fazer metodo para itens desmarcados
+
+            telaTema.CarregarItens(itensEscolhidos);
+
             DialogResult resultado = telaTema.ShowDialog();
 
             if (resultado != DialogResult.OK)
@@ -71,7 +81,7 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             repositorioTema.Editar(temaSelecionado.Id, temaEditado);
 
-            CarregarTemas();
+            CarregarTemas();            
 
             TelaPrincipalForm
                 .Instancia
@@ -124,12 +134,30 @@ namespace FestasInfantis.WinApp.ModuloTema
 
         public override UserControl ObterListagem()
         {
-           if (listTema == null)
+            if (listTema == null)
                 listTema = new TabelaTemaControl();
 
             CarregarTemas();
 
-           return listTema;
+            return listTema;
+        }
+
+        public void AdicionarItem()
+        {
+            TelaItemForm telaItem = new TelaItemForm();
+
+            DialogResult resultado = telaItem.ShowDialog();
+
+            if (resultado != DialogResult.OK)
+                return;
+
+            Item novoItem = telaItem.Item;
+
+            repositorioItem.Cadastrar(novoItem);           
+
+            TelaPrincipalForm
+               .Instancia
+               .AtualizarRodape($"O registro \"{novoItem.Descricao}\" foi criado com sucesso!");
         }
     }
 }

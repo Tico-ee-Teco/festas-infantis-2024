@@ -1,4 +1,4 @@
-﻿namespace eAgenda.ConsoleApp.Compartilhado
+﻿namespace FestasInfantis.WinApp.Compartilhado
 {
     public abstract class EntidadeBase
     {

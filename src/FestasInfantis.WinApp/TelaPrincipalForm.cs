@@ -1,4 +1,4 @@
-using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
 
@@ -31,7 +31,7 @@ namespace FestasInfantis.WinApp
         }
         private void TemaMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema(repositorioTema);
+            controlador = new ControladorTema(repositorioTema, repositorioItem);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -54,6 +54,11 @@ namespace FestasInfantis.WinApp
         {
             controlador.Excluir();
         }
+        private void btnAdicionarItens_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorAdicionavel controladorAdicionavel)
+                controladorAdicionavel.AdicionarItem();
+        }
 
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
         {
@@ -70,6 +75,7 @@ namespace FestasInfantis.WinApp
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
             btnFiltrar.Enabled = controladorSelecionado is IControladorFiltravel;
+            btnAdicionarItens.Enabled = controladorSelecionado is IControladorAdicionavel;
 
             ConfigurarToolTips(controladorSelecionado);
         }
@@ -82,6 +88,9 @@ namespace FestasInfantis.WinApp
 
             if (controladorSelecionado is IControladorFiltravel controladorFiltravel)
                 btnFiltrar.ToolTipText = controladorFiltravel.ToolTipFiltrar;
+
+            if (controladorSelecionado is IControladorAdicionavel controladorAdicionavel)
+                btnAdicionarItens.ToolTipText = controladorAdicionavel.ToolTipAdicionarItem;
         }
 
         private void ConfigurarListagem(ControladorBase controladorSelecionado)

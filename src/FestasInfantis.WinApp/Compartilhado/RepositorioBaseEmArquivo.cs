@@ -1,5 +1,4 @@
-﻿using eAgenda.ConsoleApp.Compartilhado;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace FestasInfantis.WinApp.Compartilhado
@@ -49,10 +48,10 @@ namespace FestasInfantis.WinApp.Compartilhado
         {
             bool conseguiuExcluir = registros.Remove(SelecionarPorId(id));
 
-            if(!conseguiuExcluir)
+            if (!conseguiuExcluir)
                 return false;
 
-            SerializarRegistros() ;
+            SerializarRegistros();
 
             return true;
         }
@@ -96,13 +95,13 @@ namespace FestasInfantis.WinApp.Compartilhado
             byte[] registrosEmBytes = JsonSerializer.SerializeToUtf8Bytes(registros, options);
 
             File.WriteAllBytes(caminho, registrosEmBytes);
-        } 
-        
+        }
+
         protected List<T> DeserializarRegistros()
         {
             FileInfo arquivo = new FileInfo(caminho);
 
-            if(!arquivo.Exists)
+            if (!arquivo.Exists)
                 return new List<T>();
 
             byte[] registrosEmBytes = File.ReadAllBytes(caminho);

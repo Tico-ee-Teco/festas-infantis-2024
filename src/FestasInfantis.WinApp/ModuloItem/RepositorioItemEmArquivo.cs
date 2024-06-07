@@ -7,5 +7,15 @@ namespace FestasInfantis.WinApp.ModuloItem
         public RepositorioItemEmArquivo() : base("itens.json")
         {
         }
+
+        public List<Item> ItensLivres()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Item> ItensMarcados()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

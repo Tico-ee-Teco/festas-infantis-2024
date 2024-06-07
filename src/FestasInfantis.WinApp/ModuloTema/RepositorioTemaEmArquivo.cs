@@ -9,6 +9,6 @@ namespace FestasInfantis.WinApp.ModuloTema
         public RepositorioTemaEmArquivo() : base("temas.json")
         {
 
-        }       
+        }
     }
 }

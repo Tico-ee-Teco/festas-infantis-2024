@@ -1,5 +1,5 @@
 ﻿
-using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.Compartilhado;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
@@ -20,28 +20,28 @@ namespace FestasInfantis.WinApp.ModuloTema
             grid.Rows.Clear();
 
             foreach (Tema t in temas)
-            { 
+            {
                 grid.Rows.Add(
                     t.Id.ToString(),
-                    t.Nome);               
-            }           
+                    t.Nome);
+            }
         }
 
         public int ObterRegistroSelecionado()
         {
             return grid.SelecionarId();
 
-        }       
+        }
 
         private DataGridViewColumn[] ObterColunas()
-       {
+        {
             return new DataGridViewColumn[]
             {
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome" },
-        
+
             };
-        }     
+        }
 
     }
 }

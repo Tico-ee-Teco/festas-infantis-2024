@@ -75,20 +75,20 @@
             // contatosMenuItem
             // 
             contatosMenuItem.Name = "contatosMenuItem";
-            contatosMenuItem.Size = new Size(180, 24);
+            contatosMenuItem.Size = new Size(137, 24);
             contatosMenuItem.Text = "Contatos";
             // 
             // TemaMenuItem
             // 
             TemaMenuItem.Name = "TemaMenuItem";
-            TemaMenuItem.Size = new Size(180, 24);
+            TemaMenuItem.Size = new Size(137, 24);
             TemaMenuItem.Text = "Temas";
             TemaMenuItem.Click += TemaMenuItem_Click;
             // 
             // ItensMenuItem
             // 
             ItensMenuItem.Name = "ItensMenuItem";
-            ItensMenuItem.Size = new Size(180, 24);
+            ItensMenuItem.Size = new Size(137, 24);
             ItensMenuItem.Text = "Itens";
             ItensMenuItem.Click += ItensMenuItem_Click;
             // 
@@ -184,6 +184,7 @@
             btnAdicionarItens.Name = "btnAdicionarItens";
             btnAdicionarItens.Padding = new Padding(5);
             btnAdicionarItens.Size = new Size(38, 38);
+            btnAdicionarItens.Click += btnAdicionarItens_Click;
             // 
             // toolStripSeparator2
             // 

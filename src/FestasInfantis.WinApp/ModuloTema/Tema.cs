@@ -1,4 +1,4 @@
-﻿using eAgenda.ConsoleApp.Compartilhado;
+﻿using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
@@ -8,19 +8,18 @@ namespace FestasInfantis.WinApp.ModuloTema
         public string Nome { get; set; }
         public decimal Valor { get; set; }
         public bool Aluguel { get; set; }
-
-        public List<Item> Itens { get; set; } 
+        public List<Item> Itens { get; set; }
         public Tema(string nome)
         {
-            Nome = nome;   
-            
+            Nome = nome;
+
             Itens = new List<Item>();
 
         }
 
-        public void AdicionarItem (Item item)
+        public void AdicionarItem(Item item)
         {
-            if(!Itens.Exists(i => i.Descricao == item.Descricao))
+            if (!Itens.Exists(i => i.Descricao == item.Descricao))
             {
                 Itens.Add(item);
                 Valor += item.Valor;

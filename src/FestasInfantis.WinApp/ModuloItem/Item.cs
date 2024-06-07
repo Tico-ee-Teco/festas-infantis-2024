@@ -1,9 +1,9 @@
-﻿using eAgenda.ConsoleApp.Compartilhado;
+﻿using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloItem
 {
-    public class Item : EntidadeBase 
+    public class Item : EntidadeBase
     {
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
@@ -13,8 +13,8 @@ namespace FestasInfantis.WinApp.ModuloItem
         public Item(string descricao, decimal valor)
         {
             Descricao = descricao;
-            Valor = valor;           
-        }        
+            Valor = valor;
+        }
 
         public override List<string> Validar()
         {
@@ -31,6 +31,11 @@ namespace FestasInfantis.WinApp.ModuloItem
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"Item: {Descricao} - Valor: {Valor}";
         }
     }
 }
