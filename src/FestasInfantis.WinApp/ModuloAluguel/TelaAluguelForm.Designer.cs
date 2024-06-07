@@ -49,6 +49,17 @@
             label2 = new Label();
             txtData = new DateTimePicker();
             tabPage2 = new TabPage();
+            groupBox3 = new GroupBox();
+            txtDescontoTema = new TextBox();
+            label16 = new Label();
+            txtValorPendente = new TextBox();
+            label17 = new Label();
+            txtValorTema = new TextBox();
+            label15 = new Label();
+            txtValorsinal = new TextBox();
+            label14 = new Label();
+            txtPercentualDesconto = new TextBox();
+            label13 = new Label();
             cmbSinal = new ComboBox();
             label12 = new Label();
             cmbTema = new ComboBox();
@@ -59,23 +70,15 @@
             label1 = new Label();
             btnCancelar = new Button();
             btnGravar = new Button();
-            groupBox3 = new GroupBox();
-            label13 = new Label();
-            txtPercentualDesconto = new TextBox();
-            txtValorsinal = new TextBox();
-            label14 = new Label();
-            txtValorTema = new TextBox();
-            label15 = new Label();
-            txtDescontoTema = new TextBox();
-            label16 = new Label();
-            txtValorPendente = new TextBox();
-            label17 = new Label();
+            toolStrip1 = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
             tbDadosAluguel.SuspendLayout();
             tbDadosFesta.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox3.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // tbDadosAluguel
@@ -284,6 +287,108 @@
             tabPage2.Text = "Dados do Alguel";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(toolStrip1);
+            groupBox3.Controls.Add(txtDescontoTema);
+            groupBox3.Controls.Add(label16);
+            groupBox3.Controls.Add(txtValorPendente);
+            groupBox3.Controls.Add(label17);
+            groupBox3.Controls.Add(txtValorTema);
+            groupBox3.Controls.Add(label15);
+            groupBox3.Controls.Add(txtValorsinal);
+            groupBox3.Controls.Add(label14);
+            groupBox3.Controls.Add(txtPercentualDesconto);
+            groupBox3.Controls.Add(label13);
+            groupBox3.Location = new Point(21, 90);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(631, 240);
+            groupBox3.TabIndex = 6;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Dados de Pagamento";
+            // 
+            // txtDescontoTema
+            // 
+            txtDescontoTema.Location = new Point(457, 144);
+            txtDescontoTema.Name = "txtDescontoTema";
+            txtDescontoTema.Size = new Size(100, 27);
+            txtDescontoTema.TabIndex = 9;
+            // 
+            // label16
+            // 
+            label16.ImageAlign = ContentAlignment.TopLeft;
+            label16.Location = new Point(342, 134);
+            label16.Name = "label16";
+            label16.Size = new Size(109, 41);
+            label16.TabIndex = 8;
+            label16.Text = "Valor do Tema com desconto:";
+            // 
+            // txtValorPendente
+            // 
+            txtValorPendente.Location = new Point(457, 177);
+            txtValorPendente.Name = "txtValorPendente";
+            txtValorPendente.Size = new Size(100, 27);
+            txtValorPendente.TabIndex = 7;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(342, 180);
+            label17.Name = "label17";
+            label17.Size = new Size(111, 20);
+            label17.TabIndex = 6;
+            label17.Text = "Valor Pendente:";
+            // 
+            // txtValorTema
+            // 
+            txtValorTema.Location = new Point(139, 148);
+            txtValorTema.Name = "txtValorTema";
+            txtValorTema.Size = new Size(100, 27);
+            txtValorTema.TabIndex = 5;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(24, 151);
+            label15.Name = "label15";
+            label15.Size = new Size(108, 20);
+            label15.TabIndex = 4;
+            label15.Text = "Valor do Tema:";
+            // 
+            // txtValorsinal
+            // 
+            txtValorsinal.Location = new Point(139, 181);
+            txtValorsinal.Name = "txtValorsinal";
+            txtValorsinal.Size = new Size(100, 27);
+            txtValorsinal.TabIndex = 3;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(24, 184);
+            label14.Name = "label14";
+            label14.Size = new Size(104, 20);
+            label14.TabIndex = 2;
+            label14.Text = "Valor do Sinal:";
+            // 
+            // txtPercentualDesconto
+            // 
+            txtPercentualDesconto.Enabled = false;
+            txtPercentualDesconto.Location = new Point(139, 115);
+            txtPercentualDesconto.Name = "txtPercentualDesconto";
+            txtPercentualDesconto.PlaceholderText = "0";
+            txtPercentualDesconto.Size = new Size(100, 27);
+            txtPercentualDesconto.TabIndex = 1;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(24, 118);
+            label13.Name = "label13";
+            label13.Size = new Size(112, 20);
+            label13.TabIndex = 0;
+            label13.Text = "% de Desconto:";
+            // 
             // cmbSinal
             // 
             cmbSinal.FormattingEnabled = true;
@@ -374,104 +479,24 @@
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // toolStrip1
             // 
-            groupBox3.Controls.Add(txtDescontoTema);
-            groupBox3.Controls.Add(label16);
-            groupBox3.Controls.Add(txtValorPendente);
-            groupBox3.Controls.Add(label17);
-            groupBox3.Controls.Add(txtValorTema);
-            groupBox3.Controls.Add(label15);
-            groupBox3.Controls.Add(txtValorsinal);
-            groupBox3.Controls.Add(label14);
-            groupBox3.Controls.Add(txtPercentualDesconto);
-            groupBox3.Controls.Add(label13);
-            groupBox3.Location = new Point(21, 90);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(631, 240);
-            groupBox3.TabIndex = 6;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Dados de Pagamento";
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1 });
+            toolStrip1.Location = new Point(3, 23);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(625, 51);
+            toolStrip1.TabIndex = 10;
+            toolStrip1.Text = "toolStrip1";
             // 
-            // label13
+            // toolStripButton1
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(24, 118);
-            label13.Name = "label13";
-            label13.Size = new Size(112, 20);
-            label13.TabIndex = 0;
-            label13.Text = "% de Desconto:";
-            // 
-            // txtPercentualDesconto
-            // 
-            txtPercentualDesconto.Location = new Point(139, 115);
-            txtPercentualDesconto.Name = "txtPercentualDesconto";
-            txtPercentualDesconto.Size = new Size(100, 27);
-            txtPercentualDesconto.TabIndex = 1;
-            // 
-            // txtValorsinal
-            // 
-            txtValorsinal.Location = new Point(139, 181);
-            txtValorsinal.Name = "txtValorsinal";
-            txtValorsinal.Size = new Size(100, 27);
-            txtValorsinal.TabIndex = 3;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(24, 184);
-            label14.Name = "label14";
-            label14.Size = new Size(104, 20);
-            label14.TabIndex = 2;
-            label14.Text = "Valor do Sinal:";
-            // 
-            // txtValorTema
-            // 
-            txtValorTema.Location = new Point(139, 148);
-            txtValorTema.Name = "txtValorTema";
-            txtValorTema.Size = new Size(100, 27);
-            txtValorTema.TabIndex = 5;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(24, 151);
-            label15.Name = "label15";
-            label15.Size = new Size(108, 20);
-            label15.TabIndex = 4;
-            label15.Text = "Valor do Tema:";
-            // 
-            // txtDescontoTema
-            // 
-            txtDescontoTema.Location = new Point(457, 144);
-            txtDescontoTema.Name = "txtDescontoTema";
-            txtDescontoTema.Size = new Size(100, 27);
-            txtDescontoTema.TabIndex = 9;
-            // 
-            // label16
-            // 
-            label16.ImageAlign = ContentAlignment.TopLeft;
-            label16.Location = new Point(342, 134);
-            label16.Name = "label16";
-            label16.Size = new Size(109, 41);
-            label16.TabIndex = 8;
-            label16.Text = "Valor do Tema com desconto:";
-            // 
-            // txtValorPendente
-            // 
-            txtValorPendente.Location = new Point(457, 177);
-            txtValorPendente.Name = "txtValorPendente";
-            txtValorPendente.Size = new Size(100, 27);
-            txtValorPendente.TabIndex = 7;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(342, 180);
-            label17.Name = "label17";
-            label17.Size = new Size(111, 20);
-            label17.TabIndex = 6;
-            label17.Text = "Valor Pendente:";
+            toolStripButton1.Image = Properties.Resources.paid;
+            toolStripButton1.ImageScaling = ToolStripItemImageScaling.None;
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Padding = new Padding(10);
+            toolStripButton1.Size = new Size(98, 48);
+            toolStripButton1.Text = "Calcular";
             // 
             // TelaAluguelForm
             // 
@@ -500,6 +525,8 @@
             tabPage2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -548,5 +575,7 @@
         private TextBox txtValorsinal;
         private Label label14;
         private TextBox txtPercentualDesconto;
+        private ToolStrip toolStrip1;
+        private ToolStripButton toolStripButton1;
     }
 }

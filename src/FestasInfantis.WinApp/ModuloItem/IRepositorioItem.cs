@@ -8,8 +8,7 @@ namespace FestasInfantis.WinApp.ModuloItem
         bool Excluir(int id);
         Item SelecionarPorId(int idSelecionado);
         List<Item> SelecionarTodos();
-        List<Item> ItensMarcados();
-        List<Item> ItensLivres();
+        
         
     }
 }
