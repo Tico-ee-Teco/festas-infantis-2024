@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
+            ClienteMenuItem = new ToolStripMenuItem();
             contatosMenuItem = new ToolStripMenuItem();
             TemaMenuItem = new ToolStripMenuItem();
             ItensMenuItem = new ToolStripMenuItem();
@@ -50,6 +52,7 @@
             toolStripSeparator4 = new ToolStripSeparator();
             lblTipoCadastro = new ToolStripLabel();
             pnlRegistros = new Panel();
+            toolTip1 = new ToolTip(components);
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -67,28 +70,36 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contatosMenuItem, TemaMenuItem, ItensMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ClienteMenuItem, contatosMenuItem, TemaMenuItem, ItensMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(86, 24);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
+            // ClienteMenuItem
+            // 
+            ClienteMenuItem.Name = "ClienteMenuItem";
+            ClienteMenuItem.Size = new Size(180, 24);
+            ClienteMenuItem.Text = "Clientes";
+            ClienteMenuItem.Click += ClienteMenuItem_Click;
+            // 
             // contatosMenuItem
             // 
             contatosMenuItem.Name = "contatosMenuItem";
-            contatosMenuItem.Size = new Size(137, 24);
+            contatosMenuItem.Size = new Size(180, 24);
             contatosMenuItem.Text = "Contatos";
+            contatosMenuItem.Click += contatosMenuItem_Click;
             // 
             // TemaMenuItem
             // 
             TemaMenuItem.Name = "TemaMenuItem";
-            TemaMenuItem.Size = new Size(137, 24);
+            TemaMenuItem.Size = new Size(180, 24);
             TemaMenuItem.Text = "Temas";
             TemaMenuItem.Click += TemaMenuItem_Click;
             // 
             // ItensMenuItem
             // 
             ItensMenuItem.Name = "ItensMenuItem";
-            ItensMenuItem.Size = new Size(137, 24);
+            ItensMenuItem.Size = new Size(180, 24);
             ItensMenuItem.Text = "Itens";
             ItensMenuItem.Click += ItensMenuItem_Click;
             // 
@@ -293,5 +304,7 @@
         private ToolStripButton btnConcluirAluguel;
         private ToolStripButton btnConfigurarDescontos;
         private ToolStripSeparator toolStripSeparator4;
+        private ToolStripMenuItem ClienteMenuItem;
+        private ToolTip toolTip1;
     }
 }

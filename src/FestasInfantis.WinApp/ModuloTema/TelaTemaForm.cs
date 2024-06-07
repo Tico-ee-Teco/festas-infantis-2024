@@ -37,7 +37,6 @@ namespace FestasInfantis.WinApp.ModuloTema
                 DialogResult = DialogResult.None;
             }
         }
-
         public List<Item> Itens
         {
             get

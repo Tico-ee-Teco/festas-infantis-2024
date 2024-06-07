@@ -38,7 +38,7 @@
             grid.Dock = DockStyle.Fill;
             grid.Location = new Point(0, 0);
             grid.Name = "grid";
-            grid.Size = new Size(746, 401);
+            grid.Size = new Size(718, 390);
             grid.TabIndex = 0;
             // 
             // TabelaItemControl
@@ -47,7 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
             Name = "TabelaItemControl";
-            Size = new Size(746, 401);
+            Size = new Size(718, 390);
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }

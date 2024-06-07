@@ -1,6 +1,6 @@
-﻿namespace FestasInfantis.WinApp.ModuloItem
+﻿namespace FestasInfantis.WinApp.ModuloCliente
 {
-    partial class ListagemItemControl
+    partial class TabelaClienteControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listItens = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)listItens).BeginInit();
+            grid = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)grid).BeginInit();
             SuspendLayout();
             // 
-            // listItens
+            // grid
             // 
-            listItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listItens.Dock = DockStyle.Fill;
-            listItens.Location = new Point(0, 0);
-            listItens.Name = "listItens";
-            listItens.Size = new Size(678, 353);
-            listItens.TabIndex = 0;
+            grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grid.Location = new Point(-3, 0);
+            grid.Name = "grid";
+            grid.Size = new Size(622, 414);
+            grid.TabIndex = 0;
             // 
-            // ListagemItemControl
+            // TabelaClienteControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(listItens);
-            Name = "ListagemItemControl";
-            Size = new Size(678, 353);
-            ((System.ComponentModel.ISupportInitialize)listItens).EndInit();
+            Controls.Add(grid);
+            Name = "TabelaClienteControl";
+            Size = new Size(619, 414);
+            ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView listItens;
+        protected DataGridView grid;
     }
 }
