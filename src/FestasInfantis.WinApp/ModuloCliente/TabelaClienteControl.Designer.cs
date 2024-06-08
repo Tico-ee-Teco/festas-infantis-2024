@@ -37,7 +37,7 @@
             grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grid.Location = new Point(-3, 0);
             grid.Name = "grid";
-            grid.Size = new Size(622, 414);
+            grid.Size = new Size(843, 390);
             grid.TabIndex = 0;
             // 
             // TabelaClienteControl
@@ -46,7 +46,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
             Name = "TabelaClienteControl";
-            Size = new Size(619, 414);
+            Size = new Size(716, 387);
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }

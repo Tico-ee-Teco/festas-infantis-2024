@@ -31,6 +31,7 @@ namespace FestasInfantis.WinApp.ModuloTema
             Tema novoTema = (Tema)novoRegistro;
 
             Nome = novoTema.Nome;
+            
         }
 
         public override List<string> Validar()

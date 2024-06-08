@@ -1,6 +1,7 @@
 ﻿
 
 using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
@@ -10,5 +11,15 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
 
         }
+        public List<Item> ItensLivres()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Item> ItensMarcados()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
