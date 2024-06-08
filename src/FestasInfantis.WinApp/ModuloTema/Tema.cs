@@ -9,6 +9,11 @@ namespace FestasInfantis.WinApp.ModuloTema
         public decimal Valor { get; set; }
         public bool Aluguel { get; set; }
         public List<Item> Itens { get; set; }
+
+        public Tema()
+        {
+            
+        }
         public Tema(string nome)
         {
             Nome = nome;

@@ -86,8 +86,7 @@
             // 
             contatosMenuItem.Name = "contatosMenuItem";
             contatosMenuItem.Size = new Size(180, 24);
-            contatosMenuItem.Text = "Contatos";
-            contatosMenuItem.Click += contatosMenuItem_Click;
+            contatosMenuItem.Text = "Contatos";            
             // 
             // TemaMenuItem
             // 

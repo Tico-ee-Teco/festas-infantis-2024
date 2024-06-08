@@ -9,6 +9,8 @@ namespace FestasInfantis.WinApp
     {
         ControladorBase controlador;
 
+        ContextoDados contexto;
+
         IRepositorioTema repositorioTema;
         IRepositorioItem repositorioItem;
         IRepositorioCliente repositorioCliente;
@@ -22,9 +24,11 @@ namespace FestasInfantis.WinApp
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
 
-            repositorioTema = new RepositorioTemaEmArquivo();
-            repositorioItem = new RepositorioItemEmArquivo();
-            repositorioCliente = new RepositorioClienteEmArquivo();
+            contexto = new ContextoDados(carregarDados: true);
+
+            repositorioTema = new RepositorioTemaEmArquivo(contexto);
+            repositorioItem = new RepositorioItemEmArquivo(contexto);
+            repositorioCliente = new RepositorioClienteEmArquivo(contexto);
 
         }
 
@@ -112,17 +116,7 @@ namespace FestasInfantis.WinApp
             pnlRegistros.Controls.Add(listagemContato);
         }
 
-        private void contatosMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void process1_Exited(object sender, EventArgs e)
-        {
-
-        }
-
+       
         
     }
 }
