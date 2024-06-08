@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace FestasInfantis.WinApp.ModuloCliente
 {
     public partial class TelaClienteForm : Form
-    {  
+    {
         private Cliente cliente;
         public Cliente Cliente
         {
@@ -32,12 +32,12 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-           
+
             string nome = txtNomebtn.Text;
             string telefone = txtTelefonebtn.Text;
             string Cpf = txtCPFbtn.Text;
 
-            cliente = new Cliente(nome,telefone,Cpf);
+            cliente = new Cliente(nome, telefone, Cpf);
 
             List<string> erros = Cliente.Validar();
 
@@ -70,6 +70,26 @@ namespace FestasInfantis.WinApp.ModuloCliente
         }
 
         private void TelaClientefiorm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCPFbtn_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIDbtn_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

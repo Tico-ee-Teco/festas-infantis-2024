@@ -159,5 +159,15 @@ namespace FestasInfantis.WinApp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tico_e_teco {
+            get {
+                object obj = ResourceManager.GetObject("tico e teco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
