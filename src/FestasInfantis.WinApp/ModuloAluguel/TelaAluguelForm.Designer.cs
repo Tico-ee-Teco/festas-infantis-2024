@@ -490,7 +490,7 @@
             // 
             // toolStripButton1
             // 
-            toolStripButton1.Image = Properties.Resources.paid;
+            //toolStripButton1.Image = Properties.Resources.paid;
             toolStripButton1.ImageScaling = ToolStripItemImageScaling.None;
             toolStripButton1.ImageTransparentColor = Color.Magenta;
             toolStripButton1.Name = "toolStripButton1";

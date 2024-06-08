@@ -39,5 +39,15 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             return base.Excluir(id);
         }
+        public List<Item> ItensLivres()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Item> ItensMarcados()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

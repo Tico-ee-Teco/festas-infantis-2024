@@ -12,7 +12,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
     public class ControladorCliente : ControladorBase
     {
         private TabelaClienteControl tabelacliente;
-        private List<Cliente> Clientes;
+        
         private IRepositorioCliente repositorioCliente;
 
         public override string TipoCadastro { get { return "Cliente"; } }
@@ -37,8 +37,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
             if (resultado != DialogResult.OK)
                 return;
 
-            Cliente novocliente = telaCliente.Cliente;
-          
+            Cliente novocliente = telaCliente.Cliente;        
 
             repositorioCliente.Cadastrar(novocliente);
 

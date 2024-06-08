@@ -41,7 +41,11 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
-            throw new NotImplementedException();
+            Cliente novocliente = (Cliente)novoRegistro;
+
+            Nome = novocliente.Nome;
+            Telefone = novocliente.Telefone;
+            CPF = novocliente.CPF;
         }
 
         public override string ToString()
