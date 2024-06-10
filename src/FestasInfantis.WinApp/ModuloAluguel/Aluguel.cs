@@ -17,23 +17,23 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             public int valorDeEntrada { get; set; }          
             
 
-        public Aluguel(int valordeentrada)
-            {
-               Cliente = new List<Cliente>();
-               Tema = new List<Tema>();
-               valorDeEntrada = valordeentrada;
+        public Aluguel(Cliente clienteSelecionado, int valordeentrada, Tema temaselecionado)
+        {
+             Cliente = new List<Cliente>();
+             Tema = new List<Tema>();
+             valorDeEntrada = valordeentrada;
                
-            }
+        }
 
-            public override List<string> Validar()
-            {
-                List<string> erros = new List<string>();
+        public override List<string> Validar()
+        {
+               List<string> erros = new List<string>();
 
                if (valorDeEntrada <= 0)
                 erros.Add("O campo \"valor De entrada\" é obrigatório");
 
             return erros;
-            }
+        }
 
             public override void AtualizarRegistro(EntidadeBase novoRegistro)
             {
