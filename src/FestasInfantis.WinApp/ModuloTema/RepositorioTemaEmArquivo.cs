@@ -31,7 +31,7 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             Tema tema = SelecionarPorId(id);
 
-            List<Item> itensRelacionados = 
+            List<Item> itensRelacionados =
                 contexto.Items.FindAll(i => i.Tema.Id == tema.Id);
 
             foreach (Item i in itensRelacionados)
@@ -39,15 +39,7 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             return base.Excluir(id);
         }
-        public List<Item> ItensLivres()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Item> ItensMarcados()
-        {
-            throw new NotImplementedException();
-        }
+        
 
     }
 }

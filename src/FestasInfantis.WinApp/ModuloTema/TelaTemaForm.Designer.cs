@@ -120,6 +120,7 @@
             chklistItens.Name = "chklistItens";
             chklistItens.Size = new Size(455, 279);
             chklistItens.TabIndex = 0;
+            chklistItens.SelectedIndexChanged += chklistItens_SelectedIndexChanged;
             // 
             // btnGravar
             // 

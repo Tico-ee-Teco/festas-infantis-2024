@@ -15,12 +15,12 @@ namespace FestasInfantis.WinApp.ModuloTema
             {
                 txtId.Text = value.Id.ToString();
                 txtNomeTema.Text = value.Nome;
-               
+
             }
         }
         public TelaTemaForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -54,6 +54,11 @@ namespace FestasInfantis.WinApp.ModuloTema
                 chklistItens.Items.Add(item);
 
             }
+        }
+
+        private void chklistItens_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

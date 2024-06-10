@@ -8,10 +8,10 @@ namespace FestasInfantis.WinApp.ModuloCliente
             {
 
             }
-            protected override List<Cliente> ObterRegistros()
-            {
+        protected override List<Cliente> ObterRegistros()
+        {
             return contexto.Clientes;
-            }
+        }
 
 
         }

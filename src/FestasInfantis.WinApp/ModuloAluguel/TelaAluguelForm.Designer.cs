@@ -50,6 +50,8 @@
             txtData = new DateTimePicker();
             tabPage2 = new TabPage();
             groupBox3 = new GroupBox();
+            toolStrip1 = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
             txtDescontoTema = new TextBox();
             label16 = new Label();
             txtValorPendente = new TextBox();
@@ -60,7 +62,6 @@
             label14 = new Label();
             txtPercentualDesconto = new TextBox();
             label13 = new Label();
-            cmbSinal = new ComboBox();
             label12 = new Label();
             cmbTema = new ComboBox();
             label11 = new Label();
@@ -70,8 +71,7 @@
             label1 = new Label();
             btnCancelar = new Button();
             btnGravar = new Button();
-            toolStrip1 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
+            cmbSinal = new ComboBox();
             tbDadosAluguel.SuspendLayout();
             tbDadosFesta.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -307,6 +307,24 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Dados de Pagamento";
             // 
+            // toolStrip1
+            // 
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1 });
+            toolStrip1.Location = new Point(3, 23);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(625, 42);
+            toolStrip1.TabIndex = 10;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            toolStripButton1.ImageScaling = ToolStripItemImageScaling.None;
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Padding = new Padding(10);
+            toolStripButton1.Size = new Size(74, 39);
+            toolStripButton1.Text = "Calcular";
+            // 
             // txtDescontoTema
             // 
             txtDescontoTema.Location = new Point(457, 144);
@@ -389,14 +407,6 @@
             label13.TabIndex = 0;
             label13.Text = "% de Desconto:";
             // 
-            // cmbSinal
-            // 
-            cmbSinal.FormattingEnabled = true;
-            cmbSinal.Location = new Point(85, 56);
-            cmbSinal.Name = "cmbSinal";
-            cmbSinal.Size = new Size(181, 28);
-            cmbSinal.TabIndex = 5;
-            // 
             // label12
             // 
             label12.AutoSize = true;
@@ -478,25 +488,15 @@
             btnGravar.TabIndex = 10;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
-            // toolStrip1
+            // cmbSinal
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1 });
-            toolStrip1.Location = new Point(3, 23);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(625, 51);
-            toolStrip1.TabIndex = 10;
-            toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            //toolStripButton1.Image = Properties.Resources.paid;
-            toolStripButton1.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Padding = new Padding(10);
-            toolStripButton1.Size = new Size(98, 48);
-            toolStripButton1.Text = "Calcular";
+            cmbSinal.FormattingEnabled = true;
+            cmbSinal.Location = new Point(85, 56);
+            cmbSinal.Name = "cmbSinal";
+            cmbSinal.Size = new Size(181, 28);
+            cmbSinal.TabIndex = 5;
             // 
             // TelaAluguelForm
             // 
@@ -554,15 +554,12 @@
         private Label label9;
         private TextBox txtRua;
         private Label label7;
-        private TextBox txtEstado;
-        private Label label6;
         private TextBox txtCidade;
         private Label label5;
         private ComboBox cmbTema;
         private Label label11;
         private ComboBox cmbCliente;
         private Label label10;
-        private ComboBox cmbSinal;
         private Label label12;
         private GroupBox groupBox3;
         private Label label13;
@@ -577,5 +574,8 @@
         private TextBox txtPercentualDesconto;
         private ToolStrip toolStrip1;
         private ToolStripButton toolStripButton1;
+        private TextBox txtEstado;
+        private Label label6;
+        private ComboBox cmbSinal;
     }
 }

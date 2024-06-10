@@ -1,4 +1,5 @@
 using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAluguel;
 using FestasInfantis.WinApp.ModuloCliente;
 using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
@@ -88,7 +89,7 @@ namespace FestasInfantis.WinApp
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
-            btnFiltrar.Enabled = controladorSelecionado is IControladorFiltravel;
+            btnFiltro.Enabled = controladorSelecionado is IControladorFiltravel;
             btnAdicionarItens.Enabled = controladorSelecionado is IControladorAdicionavel;
 
             ConfigurarToolTips(controladorSelecionado);
@@ -101,7 +102,7 @@ namespace FestasInfantis.WinApp
             btnExcluir.ToolTipText = controladorSelecionado.ToolTipExcluir;
 
             if (controladorSelecionado is IControladorFiltravel controladorFiltravel)
-                btnFiltrar.ToolTipText = controladorFiltravel.ToolTipFiltrar;
+                btnFiltro.ToolTipText = controladorFiltravel.ToolTipFiltrar;
 
             if (controladorSelecionado is IControladorAdicionavel controladorAdicionavel)
                 btnAdicionarItens.ToolTipText = controladorAdicionavel.ToolTipAdicionarItem;
@@ -116,7 +117,19 @@ namespace FestasInfantis.WinApp
             pnlRegistros.Controls.Add(listagemContato);
         }
 
-       
-        
+        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDesconto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfigurarDescontos_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

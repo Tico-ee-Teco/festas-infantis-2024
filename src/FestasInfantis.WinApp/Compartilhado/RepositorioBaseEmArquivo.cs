@@ -7,13 +7,13 @@ namespace FestasInfantis.WinApp.Compartilhado
     {
         protected abstract List<T> ObterRegistros();
 
-        protected int contadorId = 1;
+        private int contadorId = 1;
 
         protected ContextoDados contexto;
 
         public RepositorioBaseEmArquivo(ContextoDados contexto)
-        {            
-            this.contexto = contexto;         
+        {
+            this.contexto = contexto;
         }
 
         public void Cadastrar(T novoRegistro)
@@ -74,7 +74,6 @@ namespace FestasInfantis.WinApp.Compartilhado
                 ObterRegistros().Add(registro);
             }
         }
-
-       
+      
     }
 }
