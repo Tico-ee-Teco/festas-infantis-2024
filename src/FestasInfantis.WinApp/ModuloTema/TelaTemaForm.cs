@@ -15,6 +15,10 @@ namespace FestasInfantis.WinApp.ModuloTema
             {
                 txtId.Text = value.Id.ToString();
                 txtNomeTema.Text = value.Nome;
+
+                chklistItens.Enabled = value.Itens != null;
+                chklistItens.SelectedItem = value.Itens;
+
                
             }
         }
@@ -27,7 +31,10 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             string nome = txtNomeTema.Text;
 
-            tema = new Tema(nome);
+            Item item = (Item)chklistItens.SelectedItem;
+
+
+            tema = new Tema(nome, item);
 
             List<string> erros = tema.Validar();
 

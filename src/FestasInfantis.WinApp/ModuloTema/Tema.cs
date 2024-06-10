@@ -8,18 +8,19 @@ namespace FestasInfantis.WinApp.ModuloTema
         public string Nome { get; set; }
         public decimal Valor { get; set; }
         public bool Aluguel { get; set; }
+
+        public Item Item { get; set; }
         public List<Item> Itens { get; set; }
 
         public Tema()
         {
-            
+            Itens = new List<Item>();
         }
-        public Tema(string nome)
+        public Tema(string nome, Item item) : this()
         {
             Nome = nome;
 
-            Itens = new List<Item>();
-
+            Item = item;
         }
 
         public void AdicionarItem(Item item)
@@ -29,6 +30,18 @@ namespace FestasInfantis.WinApp.ModuloTema
                 Itens.Add(item);
                 Valor += item.Valor;
             }
+        }
+
+        public decimal CalcularValor()
+        {
+            decimal total = 0;
+
+            foreach (Item item in Itens)
+            {
+                total += item.Valor;
+            }
+
+            return total;
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -48,5 +61,7 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             return erros;
         }
+
+
     }
 }

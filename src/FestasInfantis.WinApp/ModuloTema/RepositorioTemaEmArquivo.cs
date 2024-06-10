@@ -1,6 +1,4 @@
-﻿
-
-using FestasInfantis.WinApp.Compartilhado;
+﻿using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
@@ -9,7 +7,8 @@ namespace FestasInfantis.WinApp.ModuloTema
     {
         public RepositorioTemaEmArquivo(ContextoDados contexto) : base(contexto)
         {
-
+            if(contexto.Temas.Any())
+                contadorId = contexto.Temas.Max(t => t.Id) + 1;
         }
 
         public List<Item> ItensLivres()
@@ -38,16 +37,7 @@ namespace FestasInfantis.WinApp.ModuloTema
                 i.Tema = null;
 
             return base.Excluir(id);
-        }
-        public List<Item> ItensLivres()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Item> ItensMarcados()
-        {
-            throw new NotImplementedException();
-        }
+        }      
 
     }
 }
