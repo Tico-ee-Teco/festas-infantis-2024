@@ -16,25 +16,53 @@ namespace FestasInfantis.WinApp.ModuloTema
                 txtId.Text = value.Id.ToString();
                 txtNomeTema.Text = value.Nome;
 
-                chklistItens.Enabled = value.Itens != null;
-                chklistItens.SelectedItem = value.Itens;
+                int contadorItensSelecionados = 0;
 
+                for(int i = 0; i < chklistItens.Items.Count; i++)
+                {
+                    Item item = (Item)chklistItens.Items[i];
+
+                    if (value.Itens.Contains(item))
+                        chklistItens.SetItemChecked(contadorItensSelecionados, true);
+
+                    contadorItensSelecionados++;
+                }
                
+            }
+        }
+
+        public List<Item> ItensMarcados
+        {
+            get
+            { 
+                return chklistItens
+                    .Items
+                    .Cast<Item>()                    
+                    .ToList();
+            }
+        }
+
+        public List<Item> ItensDesmarcados
+        {
+            get
+            {
+                return chklistItens
+                    .Items
+                    .Cast<Item>()
+                    .Except(ItensMarcados)
+                    .ToList();
             }
         }
         public TelaTemaForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            string nome = txtNomeTema.Text;
+            string nome = txtNomeTema.Text;            
 
-            Item item = (Item)chklistItens.SelectedItem;
-
-
-            tema = new Tema(nome, item);
+            tema = new Tema(nome);
 
             List<string> erros = tema.Validar();
 
@@ -43,18 +71,11 @@ namespace FestasInfantis.WinApp.ModuloTema
                 TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
                 DialogResult = DialogResult.None;
             }
-        }
-        public List<Item> Itens
-        {
-            get
-            {
-                return chklistItens.Items.Cast<Item>().ToList();
-            }
-        }
+        }     
 
         public void CarregarItens(List<Item> itensDisponiveis)
         {
-            chklistItens.Items.Clear();
+            //chklistItens.Items.Clear();
 
             foreach (Item item in itensDisponiveis)
             {
@@ -62,5 +83,7 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             }
         }
+
+       
     }
 }

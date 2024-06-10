@@ -9,7 +9,8 @@ namespace FestasInfantis.WinApp.ModuloTema
         bool Excluir(int id);
         Tema SelecionarPorId(int idSelecionado);
         List<Tema> SelecionarTodos();
-        List<Item> ItensMarcados();
-        List<Item> ItensLivres();
+        void AdicionarItens(Tema novoTema, List<Item> itensMarcados);
+        void AtualizarItens(Tema temaSelecionado, List<Item> itensMarcados, List<Item> itensDesmarcados);
+        
     }
 }

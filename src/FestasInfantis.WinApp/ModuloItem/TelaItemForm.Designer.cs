@@ -108,10 +108,12 @@
             // 
             // txtValor
             // 
+            txtValor.DecimalPlaces = 2;
             txtValor.Location = new Point(103, 119);
             txtValor.Name = "txtValor";
             txtValor.Size = new Size(87, 27);
             txtValor.TabIndex = 10;
+            txtValor.ThousandsSeparator = true;
             // 
             // TelaItemForm
             // 

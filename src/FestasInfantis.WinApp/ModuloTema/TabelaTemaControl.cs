@@ -23,7 +23,9 @@ namespace FestasInfantis.WinApp.ModuloTema
             {
                 grid.Rows.Add(
                     t.Id.ToString(),
-                    t.Nome);
+                    t.Nome,
+                    "R$ " + t.Valor,
+                    t.Itens.Count);
             }
         }
 
@@ -39,6 +41,8 @@ namespace FestasInfantis.WinApp.ModuloTema
             {
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Valor", HeaderText = "Valor" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Itens", HeaderText = "Qtde Itens" }
 
             };
         }

@@ -23,7 +23,7 @@ namespace FestasInfantis.WinApp.ModuloItem
                 grid.Rows.Add(
                     i.Id.ToString(),
                     i.Descricao,
-                    i.Valor
+                    "R$ " + i.Valor
                     );
             }
         }

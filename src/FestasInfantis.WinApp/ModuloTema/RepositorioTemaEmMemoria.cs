@@ -3,8 +3,9 @@ using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    public class RepositorioTemaEmMemoria : RepositorioBaseEmMemoria<Tema>, IRepositorioTema
-    {
+    public class RepositorioTemaEmMemoria : RepositorioBaseEmMemoria<Tema>
+    {       
+
         public List<Item> ItensLivres()
         {
             throw new NotImplementedException();

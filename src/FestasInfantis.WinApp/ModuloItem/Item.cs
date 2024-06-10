@@ -7,13 +7,34 @@ namespace FestasInfantis.WinApp.ModuloItem
     {
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
-        public decimal Quantidade { get; set; }
+        public Item() { }      
         public Tema Tema { get; set; }
 
         public Item(string descricao, decimal valor)
         {
             Descricao = descricao;
             Valor = valor;
+        }
+
+        public bool AtribuirTema(Tema tema)
+        {
+             if(Tema != null)
+                return false;
+
+             Tema = tema;
+
+            return true;
+
+        }
+
+        public bool RemoverTema()
+        {
+            if (Tema == null)
+                return false;
+
+            Tema = null;
+
+            return true;
         }
 
         public override List<string> Validar()
@@ -30,12 +51,15 @@ namespace FestasInfantis.WinApp.ModuloItem
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
-            throw new NotImplementedException();
+            Item item = (Item)novoRegistro;
+
+            Descricao = item.Descricao;
+            Valor = item.Valor;
         }
 
         public override string ToString()
         {
-            return $"Item: {Descricao} - Valor: {Valor} - Tema: {Tema.Nome}";
+            return $"Item: {Descricao} - Valor: {Valor}";
         }
     }
 }

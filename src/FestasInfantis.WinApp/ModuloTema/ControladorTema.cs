@@ -31,6 +31,10 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             TelaTemaForm telaTema = new TelaTemaForm();
 
+            List<Item> itensDisponiveis = repositorioItem.SelecionarItensDisponiveis();
+
+            telaTema.CarregarItens(itensDisponiveis);
+
             DialogResult resultado = telaTema.ShowDialog();
 
             if (resultado != DialogResult.OK)
@@ -39,6 +43,8 @@ namespace FestasInfantis.WinApp.ModuloTema
             Tema novoTema = telaTema.Tema;
 
             repositorioTema.Cadastrar(novoTema);
+
+            repositorioTema.AdicionarItens(novoTema, telaTema.ItensMarcados);
 
             CarregarTemas();
 
@@ -64,13 +70,13 @@ namespace FestasInfantis.WinApp.ModuloTema
                     MessageBoxIcon.Warning
                 );
                 return;
-            }
+            }            
 
-            telaTema.Tema = temaSelecionado;
-
-            List<Item> itensEscolhidos = repositorioItem.SelecionarTodos();// ToDo fazer metodo para itens desmarcados
+            List<Item> itensEscolhidos = repositorioItem.SelecionarItensDisponiveis(temaSelecionado);
 
             telaTema.CarregarItens(itensEscolhidos);
+
+            telaTema.Tema = temaSelecionado;
 
             DialogResult resultado = telaTema.ShowDialog();
 
@@ -80,6 +86,8 @@ namespace FestasInfantis.WinApp.ModuloTema
             Tema temaEditado = telaTema.Tema;
 
             repositorioTema.Editar(temaSelecionado.Id, temaEditado);
+
+            repositorioTema.AtualizarItens(temaSelecionado, telaTema.ItensMarcados, telaTema.ItensDesmarcados);
 
             CarregarTemas();            
 

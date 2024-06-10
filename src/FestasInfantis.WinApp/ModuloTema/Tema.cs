@@ -6,42 +6,54 @@ namespace FestasInfantis.WinApp.ModuloTema
     public class Tema : EntidadeBase
     {
         public string Nome { get; set; }
-        public decimal Valor { get; set; }
-        public bool Aluguel { get; set; }
+        public List<Item> Itens { get; set; } = new List<Item>();
+        public decimal Valor
+        {
+            get
+            {
+                decimal total = 0;
 
-        public Item Item { get; set; }
-        public List<Item> Itens { get; set; }
+                foreach (Item item in Itens)
+                {
+                    total += item.Valor;
+                }
+
+                return total;
+            } 
+        }
+        public bool Aluguel { get; set; }        
 
         public Tema()
         {
-            Itens = new List<Item>();
+            
         }
-        public Tema(string nome, Item item) : this()
+        public Tema(string nome) 
         {
-            Nome = nome;
-
-            Item = item;
+            Nome = nome;           
         }
 
-        public void AdicionarItem(Item item)
+        public bool AdicionarItem(Item item)
         {
-            if (!Itens.Exists(i => i.Descricao == item.Descricao))
-            {
-                Itens.Add(item);
-                Valor += item.Valor;
-            }
-        }
+            if (Itens.Contains(item))
+                return false;
 
-        public decimal CalcularValor()
+            Itens.Add(item);
+
+            item.AtribuirTema(this);
+
+            return true;
+        }   
+        
+        public bool RemoverItem(Item item)
         {
-            decimal total = 0;
+            if(!Itens.Contains(item))
+                return false;
 
-            foreach (Item item in Itens)
-            {
-                total += item.Valor;
-            }
+            Itens.Remove(item);
 
-            return total;
+            item.RemoverTema();
+
+            return true;
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -61,6 +73,8 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             return erros;
         }
+
+       
 
 
     }
