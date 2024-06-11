@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloTema;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +13,7 @@ using System.Windows.Forms;
 namespace FestasInfantis.WinApp.ModuloAluguel
 {
     public partial class TelaAluguelForm : Form
+
     {        
        
         public Festa Festa
@@ -84,48 +87,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
 
 
-        }
-
-        private void btnGravar_Click(object sender, EventArgs e)
-        {
-
-            //Cliente cliente = ;
-            //string telefone = txtTelefonebtn.Text;
-            //string Cpf = txtCPFbtn.Text;
-
-            //cliente = new Cliente(nome, telefone, Cpf);
-
-            //List<string> erros = Cliente.Validar();
-
-            //if (erros.Count > 0)
-            //{
-            //    TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
-            //    DialogResult = DialogResult.None;
-            //}
-        }
-
-
-
-        }
-
-        private void btnGravar_Click(object sender, EventArgs e)
-        {
-
-            //Cliente cliente = ;
-            //string telefone = txtTelefonebtn.Text;
-            //string Cpf = txtCPFbtn.Text;
-
-            //cliente = new Cliente(nome, telefone, Cpf);
-
-            //List<string> erros = Cliente.Validar();
-
-            //if (erros.Count > 0)
-            //{
-            //    TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
-            //    DialogResult = DialogResult.None;
-            //}
-        }
-
+    
 
         public TelaAluguelForm()
         {
