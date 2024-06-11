@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            label1 = new Label();
+            txtPorcentagemAluguel = new NumericUpDown();
             txtPorcentagemDesconto = new NumericUpDown();
             label2 = new Label();
-            txtPorcentagemAluguel = new NumericUpDown();
-            label1 = new Label();
             btnCancelar = new Button();
             btnGravar = new Button();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)txtPorcentagemDesconto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPorcentagemAluguel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtPorcentagemDesconto).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -54,6 +54,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Porcentagem de Desconto";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(32, 44);
+            label1.Name = "label1";
+            label1.Size = new Size(181, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Porcentagem por Aluguel:";
+            // 
+            // txtPorcentagemAluguel
+            // 
+            txtPorcentagemAluguel.Location = new Point(255, 42);
+            txtPorcentagemAluguel.Name = "txtPorcentagemAluguel";
+            txtPorcentagemAluguel.Size = new Size(84, 27);
+            txtPorcentagemAluguel.TabIndex = 1;
+            // 
             // txtPorcentagemDesconto
             // 
             txtPorcentagemDesconto.Location = new Point(255, 97);
@@ -69,22 +85,6 @@
             label2.TabIndex = 2;
             label2.Text = "Máximo de Porcentagem de Desconto:";
             label2.TextAlign = ContentAlignment.TopRight;
-            // 
-            // txtPorcentagemAluguel
-            // 
-            txtPorcentagemAluguel.Location = new Point(255, 42);
-            txtPorcentagemAluguel.Name = "txtPorcentagemAluguel";
-            txtPorcentagemAluguel.Size = new Size(84, 27);
-            txtPorcentagemAluguel.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 44);
-            label1.Name = "label1";
-            label1.Size = new Size(181, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Porcentagem por Aluguel:";
             // 
             // btnCancelar
             // 
@@ -105,7 +105,6 @@
             btnGravar.TabIndex = 12;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
-            btnGravar.Click += btnGravar_Click;
             // 
             // TelaDescontoForm
             // 
@@ -122,8 +121,8 @@
             Text = "Configuração de Desconto";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)txtPorcentagemDesconto).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPorcentagemAluguel).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtPorcentagemDesconto).EndInit();
             ResumeLayout(false);
         }
 

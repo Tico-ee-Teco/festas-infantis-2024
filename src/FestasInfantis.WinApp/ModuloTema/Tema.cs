@@ -6,29 +6,54 @@ namespace FestasInfantis.WinApp.ModuloTema
     public class Tema : EntidadeBase
     {
         public string Nome { get; set; }
-        public decimal Valor { get; set; }
-        public bool Aluguel { get; set; }
-        public List<Item> Itens { get; set; }
+        public List<Item> Itens { get; set; } = new List<Item>();
+        public decimal Valor
+        {
+            get
+            {
+                decimal total = 0;
+
+                foreach (Item item in Itens)
+                {
+                    total += item.Valor;
+                }
+
+                return total;
+            } 
+        }
+        public bool Aluguel { get; set; }        
 
         public Tema()
         {
             
         }
-        public Tema(string nome)
+        public Tema(string nome) 
         {
-            Nome = nome;
-
-            Itens = new List<Item>();
-
+            Nome = nome;           
         }
 
-        public void AdicionarItem(Item item)
+        public bool AdicionarItem(Item item)
         {
-            if (!Itens.Exists(i => i.Descricao == item.Descricao))
-            {
-                Itens.Add(item);
-                Valor += item.Valor;
-            }
+            if (Itens.Contains(item))
+                return false;
+
+            Itens.Add(item);
+
+            item.AtribuirTema(this);
+
+            return true;
+        }   
+        
+        public bool RemoverItem(Item item)
+        {
+            if(!Itens.Contains(item))
+                return false;
+
+            Itens.Remove(item);
+
+            item.RemoverTema();
+
+            return true;
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -48,5 +73,9 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             return erros;
         }
+
+       
+
+
     }
 }

@@ -7,7 +7,7 @@ namespace FestasInfantis.WinApp.Compartilhado
     {
         protected abstract List<T> ObterRegistros();
 
-        private int contadorId = 1;
+        protected int contadorId = 1;
 
         protected ContextoDados contexto;
 

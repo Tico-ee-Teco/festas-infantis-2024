@@ -1,4 +1,5 @@
 ﻿using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloItem
 {
@@ -11,16 +12,23 @@ namespace FestasInfantis.WinApp.ModuloItem
         protected override List<Item> ObterRegistros()
         {
             return contexto.Items;
+        }     
+
+        public List<Item> SelecionarItensDisponiveis()
+        {
+            return ObterRegistros()
+                .Where(i => i.Tema == null)
+                .ToList();
         }
 
-        public List<Item> ItensLivres()
-        {
-            throw new NotImplementedException();
+        public List<Item> SelecionarItensDisponiveis(Tema temaSelecionado)
+        {              
+            return ObterRegistros()
+                .Where(i => i.Tema == null)
+                .Concat(temaSelecionado.Itens)
+                .ToList();
         }
 
-        public List<Item> ItensMarcados()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

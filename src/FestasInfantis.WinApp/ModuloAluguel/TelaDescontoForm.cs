@@ -16,10 +16,5 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         {
             InitializeComponent();
         }
-
-        private void btnGravar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
