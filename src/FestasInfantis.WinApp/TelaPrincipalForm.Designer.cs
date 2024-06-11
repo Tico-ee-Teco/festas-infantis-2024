@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipalForm));
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             ClienteMenuItem = new ToolStripMenuItem();
             contatosMenuItem = new ToolStripMenuItem();
             TemaMenuItem = new ToolStripMenuItem();
             ItensMenuItem = new ToolStripMenuItem();
-            aluguelToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             statusLabelPrincipal = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
@@ -55,6 +55,7 @@
             toolStripButton1 = new ToolStripButton();
             pnlRegistros = new Panel();
             toolTip1 = new ToolTip(components);
+            aluguelToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -81,36 +82,29 @@
             // ClienteMenuItem
             // 
             ClienteMenuItem.Name = "ClienteMenuItem";
-            ClienteMenuItem.Size = new Size(137, 24);
+            ClienteMenuItem.Size = new Size(180, 24);
             ClienteMenuItem.Text = "Clientes";
             ClienteMenuItem.Click += ClienteMenuItem_Click;
             // 
             // contatosMenuItem
             // 
             contatosMenuItem.Name = "contatosMenuItem";
-            contatosMenuItem.Size = new Size(137, 24);
+            contatosMenuItem.Size = new Size(180, 24);
             contatosMenuItem.Text = "Contatos";
             // 
             // TemaMenuItem
             // 
             TemaMenuItem.Name = "TemaMenuItem";
-            TemaMenuItem.Size = new Size(137, 24);
+            TemaMenuItem.Size = new Size(180, 24);
             TemaMenuItem.Text = "Temas";
             TemaMenuItem.Click += TemaMenuItem_Click;
             // 
             // ItensMenuItem
             // 
             ItensMenuItem.Name = "ItensMenuItem";
-            ItensMenuItem.Size = new Size(137, 24);
+            ItensMenuItem.Size = new Size(180, 24);
             ItensMenuItem.Text = "Itens";
             ItensMenuItem.Click += ItensMenuItem_Click;
-            // 
-            // aluguelToolStripMenuItem
-            // 
-            aluguelToolStripMenuItem.Name = "aluguelToolStripMenuItem";
-            aluguelToolStripMenuItem.Size = new Size(137, 24);
-            aluguelToolStripMenuItem.Text = "Aluguel";
-            aluguelToolStripMenuItem.Click += ClienteMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -261,7 +255,7 @@
             // toolStripButton1
             // 
             toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = Properties.Resources.tico_e_teco;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
             toolStripButton1.ImageTransparentColor = Color.Magenta;
             toolStripButton1.Name = "toolStripButton1";
             toolStripButton1.Size = new Size(23, 38);
@@ -274,6 +268,13 @@
             pnlRegistros.Name = "pnlRegistros";
             pnlRegistros.Size = new Size(800, 356);
             pnlRegistros.TabIndex = 3;
+            // 
+            // aluguelToolStripMenuItem
+            // 
+            aluguelToolStripMenuItem.Name = "aluguelToolStripMenuItem";
+            aluguelToolStripMenuItem.Size = new Size(180, 24);
+            aluguelToolStripMenuItem.Text = "Aluguel";
+            aluguelToolStripMenuItem.Click += ClienteMenuItem_Click;
             // 
             // TelaPrincipalForm
             // 
