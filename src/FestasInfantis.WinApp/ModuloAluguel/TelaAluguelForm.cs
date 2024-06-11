@@ -22,12 +22,16 @@ namespace FestasInfantis.WinApp.ModuloAluguel
                 cmbCliente.Items.Add(c);
 
             cmbTema.Items.Clear();
-            
+
             foreach (Tema c in temas)
-                cmbTema.Items.Add(c);            
-            
+                cmbTema.Items.Add(c);
+
         }
-       
+
+        public TelaAluguelForm()
+        {
+            InitializeComponent();
+        }
 
         public Aluguel Aluguel
         {
@@ -38,15 +42,15 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
 
                 return Aluguel;
-                
+
             }
             set
             {
-                
 
 
 
-              
+
+
             }
 
         }
@@ -54,7 +58,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         {
             get
             {
-                
+
                 DateTime data = txtData.Value.Date;
                 DateTime horadeinicio = txtHorarioInicio.Value;
                 DateTime horadetermino = txtHorarioTermino.Value;
@@ -64,17 +68,17 @@ namespace FestasInfantis.WinApp.ModuloAluguel
                 string numero = txtNumero.Text.Trim();
                 string bairro = txtBairro.Text.Trim();
 
-                
+
                 Endereco endereco = new Endereco(cidade, estado, rua, numero, bairro);
 
-                
+
                 return new Festa(data, horadeinicio, horadetermino, endereco);
             }
             set
             {
                 if (value != null)
                 {
-                   
+
                     txtData.Value = value.Data;
                     txtHorarioInicio.Value = value.Horadeinicio;
                     txtHorarioTermino.Value = value.Horadetermino;
@@ -108,54 +112,13 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
 
 
-        }
+    
 
-        private void btnGravar_Click(object sender, EventArgs e)
-        {
-
-            //Cliente cliente = ;
-            //string telefone = txtTelefonebtn.Text;
-            //string Cpf = txtCPFbtn.Text;
-
-            //cliente = new Cliente(nome, telefone, Cpf);
-
-            //List<string> erros = Cliente.Validar();
-
-            //if (erros.Count > 0)
-            //{
-            //    TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
-            //    DialogResult = DialogResult.None;
-            //}
-        }
+   
+   
 
 
 
-        }
 
-        private void btnGravar_Click(object sender, EventArgs e)
-        {
-
-            //Cliente cliente = ;
-            //string telefone = txtTelefonebtn.Text;
-            //string Cpf = txtCPFbtn.Text;
-
-            //cliente = new Cliente(nome, telefone, Cpf);
-
-            //List<string> erros = Cliente.Validar();
-
-            //if (erros.Count > 0)
-            //{
-            //    TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
-            //    DialogResult = DialogResult.None;
-            //}
-        }
-
-
-        public TelaAluguelForm()
-        {
-            InitializeComponent();
-        }
-
-       
-    }
+   } 
 }
