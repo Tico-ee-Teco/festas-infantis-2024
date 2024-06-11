@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloTema;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
